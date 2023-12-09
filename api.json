@@ -1,0 +1,8 @@
+{
+  "app": "fastapi",
+  "env": "py36",
+  "work_dir": "/data/backend_api/1_post_classifier",
+  "file": "main.py",
+  "port": "5001",
+  "debug": "False"
+}
