@@ -26,6 +26,19 @@ async def upload(file: UploadFile = File(...)):
 
 
 import uvicorn
+import sys
+import os
+
+port = 33001
+debug = True
+if(len(sys.argv) > 1):
+    port = int(sys.argv[1])
+if(len(sys.argv) > 2):
+    if(sys.argv[2] == "False"):
+        import logging
+        debug = False 
+        logging.basicConfig(filename='server.log',level=logging.DEBUG)
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=33001, reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=port, reload=debug)
+
